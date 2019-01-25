@@ -1,0 +1,15 @@
+using System;
+
+namespace hom10_day_of_weak
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] week = { "Error", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+            int read = int.Parse(Console.ReadLine());
+            string check;
+            Console.WriteLine(check = read > 0 && read < 8 ? week[read] : week[0]);
+        }
+    }
+}
