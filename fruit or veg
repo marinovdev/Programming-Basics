@@ -1,0 +1,25 @@
+using System;
+
+namespace hom04_fruit_or_veg
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var first = Console.ReadLine();
+
+            if(first == "banana" || first == "apple" || first == "kiwi" || first == "cherry" || first == "lemon" || first == "grapes")
+            {
+                Console.WriteLine("fruit");
+            }
+            else if (first =="tomato" || first == "cucumber" || first == "pepper" || first == "carrot")
+            {
+                Console.WriteLine("vegetable");
+            }
+            else
+            {
+                Console.WriteLine("unknown");
+            }
+        }
+    }
+}
