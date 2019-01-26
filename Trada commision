@@ -1,0 +1,45 @@
+using System;
+
+namespace _07_trade_commisions
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string town = Console.ReadLine();
+            double sales = double.Parse(Console.ReadLine());
+            double commision = 0;
+
+            if (town == "Sofia")
+            {
+                if (sales <= 500 && sales >= 0) commision = 1.05;
+                else if (sales > 500 && sales <= 1000) commision = 1.07;
+                else if (sales > 1000 && sales <= 10000) commision = 1.08;
+                else if (sales > 10000) commision = 1.12;
+            }
+           else if (town == "Varna")
+            {
+                if (sales <= 500 && sales >= 0) commision = 1.045;
+                else if (sales > 500 && sales <= 1000) commision = 1.075;
+                else if (sales > 1000 && sales <= 10000) commision = 1.10;
+                else if (sales > 10000) commision = 1.13;
+            }
+           else if (town == "Plovdiv")
+            {
+                if (sales <= 500 && sales >= 0) commision = 1.055;
+                else if (sales > 500 && sales <= 1000) commision = 1.08;
+                else if (sales > 1000 && sales <= 10000) commision = 1.12;
+                else if (sales > 10000) commision = 1.145;
+            }
+            double resuilt = Math.Round((sales * commision) - sales, 2);
+            if (town == "Sofia" || town == "Varna" || town == "Plovdiv" && !(sales <= 0))
+            {
+                Console.WriteLine($"{resuilt:f2}");
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+        }
+    }
+}
