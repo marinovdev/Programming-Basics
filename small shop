@@ -1,0 +1,115 @@
+using System;
+
+namespace hom02_small_shop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string product = Console.ReadLine();
+            string city = Console.ReadLine();
+            double quantity = double.Parse(Console.ReadLine());
+            double price = 0;
+            if (city == "Sofia")
+            {
+                if (product == "coffee")
+                {
+                    double coffee = 0.50;
+                    price = coffee * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "water")
+                {
+                    double water = 0.80;
+                    price = water * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "beer")
+                {
+                    double beer = 1.20;
+                    price = beer * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "sweets")
+                {
+                    double sweets = 1.45;
+                    price = sweets * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "peanuts")
+                {
+                    double peanuts = 1.60;
+                    price = peanuts * quantity;
+                    Console.WriteLine($"{price}");
+                }
+            }
+            else if (city == "Varna")
+            {
+                if (product == "coffee")
+                {
+                    double coffee = 0.45;
+                    price = coffee * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "water")
+                {
+                    double water = 0.70;
+                    price = water * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "beer")
+                {
+                    double beer = 1.10;
+                    price = beer * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "sweets")
+                {
+                    double sweets = 1.35;
+                    price = sweets * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "peanuts")
+                {
+                    double peanuts = 1.55;
+                    price = peanuts * quantity;
+                    Console.WriteLine($"{price}");
+                }
+            }
+            else if (city == "Plovdiv")
+            {
+                if (product == "coffee")
+                {
+                    double coffee = 0.40;
+                    price = coffee * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "water")
+                {
+                    double water = 0.70;
+                    price = water * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "beer")
+                {
+                    double beer = 1.15;
+                    price = beer * quantity;
+                    Console.WriteLine($"{beer * quantity}");
+                }
+                else if (product == "sweets")
+                {
+                    double sweets = 1.30;
+                    price = sweets * quantity;
+                    Console.WriteLine($"{price}");
+                }
+                else if (product == "peanuts")
+                {
+                    double peanuts = 1.50;
+                    price = peanuts * quantity;
+                    Console.WriteLine($"{price}");
+                }
+            }
+            
+        }
+    }
+}
