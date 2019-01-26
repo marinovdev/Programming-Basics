@@ -1,0 +1,38 @@
+using System;
+
+namespace hom01_personal_titles
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float years = float.Parse(Console.ReadLine());
+            string gender = Console.ReadLine();
+
+            if(gender == "m")
+            {
+                if(years < 16)
+                {
+                    Console.WriteLine("Master");
+                }
+                else
+                {
+                    Console.WriteLine("Mr.");
+                }
+
+            }
+            if (gender == "f")
+            {
+                if (years < 16)
+                {
+                    Console.WriteLine("Miss");
+                }
+                else
+                {
+                    Console.WriteLine("Ms.");
+                }
+
+            }
+        }
+    }
+}
