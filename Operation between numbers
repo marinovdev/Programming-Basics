@@ -1,0 +1,69 @@
+using System;
+
+namespace hom07_operation_between_numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n1 = int.Parse(Console.ReadLine());
+            int n2 = int.Parse(Console.ReadLine());
+            string operation = Console.ReadLine();
+            string type = "";
+            if(n1 == 0 || n2 == 0)
+            {
+                Console.WriteLine("Cannot divide {0} by zero", n1);
+                operation = "";
+            }
+            if (operation == "-")
+            {
+                int resuilt = n1 - n2;
+                if (resuilt % 2 == 0)
+                {
+                    type = "even";
+                }
+                else
+                {
+                    type = "odd";
+                }
+                Console.WriteLine($"{n1} {operation} {n2} = {resuilt} - {type}");
+            }
+            else if (operation == "+")
+            {
+                int resuilt = n1 + n2;
+                if (resuilt % 2 == 0)
+                {
+                    type = "even";
+                }
+                else
+                {
+                    type = "odd";
+                }
+                Console.WriteLine($"{n1} {operation} {n2} = {resuilt} - {type}");
+            }
+            else if (operation == "*")
+            {
+                int resuilt = n1 * n2;
+                if (resuilt % 2 == 0)
+                {
+                    type = "even";
+                }
+                else
+                {
+                    type = "odd";
+                }
+                Console.WriteLine($"{n1} {operation} {n2} = {resuilt} - {type}");
+            }
+            else if (operation == "/")
+            {
+                   double resuilt = (double)n1 / (double)n2;
+                Console.WriteLine($"{n1} / {n2} = {resuilt:F2}");
+            }
+            else if (operation == "%")
+            {
+                double resuilt = n1 % n2;
+                Console.WriteLine($"{n1} % {n2} = {resuilt}");
+            }
+        }
+    }
+}
