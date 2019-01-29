@@ -1,0 +1,36 @@
+using System;
+
+namespace _02_christmas_market
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double money = double.Parse(Console.ReadLine());
+            int phentasyQntity = int.Parse(Console.ReadLine());
+            int horrorQntity = int.Parse(Console.ReadLine());
+            int romanticQntity = int.Parse(Console.ReadLine());
+            double final = 0;
+
+            double allbooks = (phentasyQntity * 14.90) + (horrorQntity * 9.80) + (romanticQntity * 4.30);
+            double vat = allbooks - allbooks * 0.2;
+            double final1 = vat;
+
+            if( final1 > money)
+            {
+                double temp = final1 - money;
+                double toPersonal = Math.Floor(temp * 0.1);
+                final = temp - toPersonal;
+                double gift = final + money;
+                Console.WriteLine($"{gift:F2} leva donated.");
+                Console.WriteLine($"Sellers will receive {toPersonal} leva.");
+            }
+            else
+            {
+                double need = money - final1;
+                Console.WriteLine($"{need:F2} money needed.");
+            }
+
+        }
+    }
+}
