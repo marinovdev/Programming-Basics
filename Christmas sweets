@@ -1,0 +1,28 @@
+using System;
+
+namespace _01_cristmas_sweets
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            decimal baklavaPrice = decimal.Parse(Console.ReadLine());//
+            decimal muffinPrice = decimal.Parse(Console.ReadLine());//
+            decimal shtolenKg = decimal.Parse(Console.ReadLine());
+            decimal candyKg = decimal.Parse(Console.ReadLine());
+            decimal cookiesKg = decimal.Parse(Console.ReadLine());//
+
+            decimal shtolenPrice = baklavaPrice * (decimal)1.6;
+            decimal candyPrice = muffinPrice * (decimal)1.8;
+            decimal cookiesTotal = cookiesKg * (decimal)7.50; //
+
+            decimal temp1 = shtolenKg * shtolenPrice;
+            decimal temp2 = candyKg * candyPrice;
+
+            decimal total = temp1 + temp2 + cookiesTotal;
+
+            Console.WriteLine($"{total:F2}");
+
+        }
+    }
+}
