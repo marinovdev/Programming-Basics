@@ -1,0 +1,25 @@
+using System;
+
+namespace back_in_30_min
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int hour = int.Parse(Console.ReadLine());
+            int minute = int.Parse(Console.ReadLine());
+
+            int calc = ((hour * 60) + minute) + 30;
+            int hours = calc / 60;
+            if (hours == 24)
+            {
+                hours = 0;
+            }
+            int minutes = calc % 60;
+            var minstring = minutes.ToString().PadLeft(2, '0');
+            Console.WriteLine($"{hours}:{minstring}");
+
+        }
+    }
+}
+//https://judge.softuni.bg/Contests/Practice/Index/1188#4
