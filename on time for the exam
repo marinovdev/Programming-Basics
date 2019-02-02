@@ -1,0 +1,63 @@
+using System;
+
+namespace hom09_on_time_for_the_exam3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int hourExam = int.Parse(Console.ReadLine());
+            int minuteExam = int.Parse(Console.ReadLine());
+            int hourArrive = int.Parse(Console.ReadLine());
+            int minuteArrive = int.Parse(Console.ReadLine());
+            string stats = "";
+
+            int examTime = (hourExam * 60) + minuteExam;
+            int arriveTime = (hourArrive * 60) + minuteArrive;
+
+            int difference = examTime - arriveTime;
+            if(difference > 30)
+            {
+                stats = "Early";
+            }
+            else if(difference <= 30 && difference >= 0)
+            {
+                stats = "On time";
+            }
+            else if(difference < 0)
+            {
+                stats = "Late";
+            }
+            Console.WriteLine(stats);
+            int hourDifference = difference / 60;
+            int minuteDifference = difference % 60;
+            int hour = 0;
+            int minute = 0;
+
+            if(hourDifference < 0)
+            {
+                hour = Math.Abs(hourDifference);
+                minute = Math.Abs(minuteDifference);
+                var minutes = minute.ToString().PadLeft(2, '0');
+                Console.WriteLine($"{hour}:{minutes} hours after the start");
+            }
+           else if (minuteDifference < 0)
+            {
+                minute = Math.Abs(minuteDifference);
+                Console.WriteLine($"{minute} minutes after the start");
+            }
+           else if (hourDifference > 0 )
+            {
+                hour = Math.Abs(hourDifference);
+                minute = Math.Abs(minuteDifference);
+                var minutes = minute.ToString().PadLeft(2, '0');
+                Console.WriteLine($"{hour}:{minutes} hours before the start");
+            }
+            else if (minuteDifference >= 0)
+            {
+                minute = Math.Abs(minuteDifference);
+                Console.WriteLine($"{minute} minutes before the start");
+            }
+        }
+    }
+}
