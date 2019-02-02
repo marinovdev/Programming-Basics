@@ -1,0 +1,31 @@
+using System;
+
+namespace hom03_account_balance
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            double total = 0;
+            while(n > 0)
+            {
+                if (n <= 0)
+                {
+                    Console.WriteLine("Invalid operation!");
+                    break;
+                }
+                double instalment = double.Parse(Console.ReadLine());
+                if (instalment <= 0)
+                {
+                    Console.WriteLine("Invalid operation!");
+                    break;
+                }
+                Console.WriteLine("Increase: {0:F2}", instalment);
+                total += instalment;
+                n--;
+            }
+            Console.WriteLine("Total: {0:F2}", total);
+        }
+    }
+}
