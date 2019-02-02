@@ -1,0 +1,23 @@
+using System;
+
+namespace hom02_sequence_2k_plus1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = int.Parse(Console.ReadLine());
+
+            int current = 0;
+            while(current < num)
+            {
+                current = current * 2 + 1;
+
+                if (current > num) break;
+                Console.WriteLine(current);
+                
+
+            }
+        }
+    }
+}
