@@ -1,0 +1,28 @@
+using System;
+
+namespace hom10_volleyball
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string type = Console.ReadLine();
+            int p = int.Parse(Console.ReadLine());
+            int h = int.Parse(Console.ReadLine());
+            decimal total = 0;
+
+            decimal pPlay = (decimal)p * (2m / 3m);
+            decimal hPlay = (decimal)h;
+            decimal normalYear = 48 - h;
+            decimal inSofia = normalYear;
+            decimal playInSofia = (inSofia) * (3m / 4m);
+            decimal totalA = pPlay + hPlay + playInSofia;
+            if (type == "leap")
+            {
+                total = Math.Floor(totalA * (decimal)1.15);
+            }
+            else if (type == "normal") total = Math.Floor(totalA);
+            Console.WriteLine(total);
+        }
+    }
+}
