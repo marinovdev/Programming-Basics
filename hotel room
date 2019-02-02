@@ -1,0 +1,53 @@
+using System;
+
+namespace hom09_hotel_room
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string month = Console.ReadLine();
+            int stay = int.Parse(Console.ReadLine());
+            double priceA = 0;
+            double priceS = 0;
+            double discount = 1;
+            double discount14day = 1;
+
+            if(month == "May" || month == "October")
+            {
+                priceA = 65;
+                priceS = 50;
+                if (stay > 7 && stay <= 14)
+                {
+                    discount = 0.95;
+                }
+                else if (stay > 14)
+                {
+                    discount = 0.70;
+                }
+            }
+            else if(month == "June" || month == "September")
+            {
+                priceA = 68.70;
+                priceS = 75.20;
+                if (stay > 14)
+                {
+                    discount = 0.80;
+                }
+            }
+            else if (month == "July" || month == "August")
+            {
+                priceA = 77;
+                priceS = 76;
+
+            }
+            if(stay > 14) discount14day = 0.90;
+
+            double totalA = priceA * stay * discount14day;
+            double totalS = priceS * stay * discount;
+
+            Console.WriteLine($"Apartment: {totalA:F2} lv.");
+            Console.WriteLine($"Studio: {totalS:F2} lv.");
+        }
+    }
+}
