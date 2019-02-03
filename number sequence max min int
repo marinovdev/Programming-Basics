@@ -1,0 +1,26 @@
+using System;
+
+namespace hom04_number_sequence
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string current = "";
+            int maxNumberAtTheMoment = int.MinValue;
+            int minNumberAtTheMoment = int.MaxValue;
+            while ((current = Console.ReadLine()) != "END")
+            {
+                int numberCurrent = int.Parse(current);
+                if (numberCurrent > maxNumberAtTheMoment) maxNumberAtTheMoment = numberCurrent;
+                if (numberCurrent < minNumberAtTheMoment) minNumberAtTheMoment = numberCurrent;
+
+
+            }
+            Console.WriteLine($"Max number: {maxNumberAtTheMoment}");
+            Console.WriteLine($"Min number: {minNumberAtTheMoment}");
+
+         
+        }
+    }
+}
