@@ -1,0 +1,39 @@
+using System;
+
+namespace hom05_walking
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string command = "";
+            int totalSteps = 0;
+            int goalSteps = 10000;
+            while((command = Console.ReadLine()) != "Going home")
+                {
+                int stepsWalket = int.Parse(command);
+                totalSteps += stepsWalket;
+                if (totalSteps >= goalSteps)
+                {
+                    Console.WriteLine($"Goal reached! Good job!");
+                    break;
+                }
+
+                }
+            if (command == "Going home")
+            {
+                int goingHomeSteps = int.Parse(Console.ReadLine());
+                totalSteps += goingHomeSteps;
+                if (totalSteps >= goalSteps)
+                {
+                    Console.WriteLine($"Goal reached! Good job!");
+                }
+                else if (totalSteps < goalSteps)
+                {
+                    Console.WriteLine($"{goalSteps - totalSteps} more steps to reach goal.");
+                }
+
+            }
+        }
+    }
+}
