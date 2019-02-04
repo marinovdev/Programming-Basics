@@ -1,0 +1,40 @@
+using System;
+
+namespace hom02_exam_preparation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int unsatisfyingScore = int.Parse(Console.ReadLine());
+            bool programContinue = true;
+            int currentUnsatisfyingScore = 0;
+            int numberOfProblems = 0;
+            string lastProblem = "";
+            int sumOfScore = 0;
+            while(programContinue == true)
+            {
+                string nameOfExercise = Console.ReadLine();
+                if(nameOfExercise == "Enough")
+                {
+                    double avarageScore = (double)sumOfScore / numberOfProblems;
+                    Console.WriteLine($"Average score: {avarageScore:f2}\nNumber of problems: {numberOfProblems}\nLast problem: {lastProblem}");
+                    break;
+                }
+                lastProblem = nameOfExercise;
+                numberOfProblems++;
+                int exerciseScore = int.Parse(Console.ReadLine());
+                sumOfScore += exerciseScore;
+                if(exerciseScore <= 4)
+                {
+                    currentUnsatisfyingScore++;
+                }
+                if(currentUnsatisfyingScore >= unsatisfyingScore)
+                {
+                    Console.WriteLine($"You need a break, {currentUnsatisfyingScore} poor grades.");
+                    break;
+                }
+            }
+        }
+    }
+}
