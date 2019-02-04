@@ -1,0 +1,37 @@
+using System;
+
+namespace hom08_moving
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int hight = int.Parse(Console.ReadLine());
+            int width = int.Parse(Console.ReadLine());
+            int lenght = int.Parse(Console.ReadLine());
+            int freeSpace = hight * width * lenght;
+            int boxesTransfered = 0;
+            while(boxesTransfered <= freeSpace)
+            {
+                string command = Console.ReadLine();
+                if (command != "Done")
+                {
+                    int currentVolumeOfBoxes = int.Parse(command);
+                    boxesTransfered += currentVolumeOfBoxes;
+                }
+                else
+                {
+                    int defficit = boxesTransfered - freeSpace;
+                    Console.WriteLine($"{Math.Abs(defficit)} Cubic meters left.");
+                    break;
+                }
+                if(boxesTransfered > freeSpace)
+                {
+                    int defficit = boxesTransfered - freeSpace;
+                    Console.WriteLine($"No more free space! You need {Math.Abs(defficit)} Cubic meters more.");
+                    break;
+                }
+            }
+        }
+    }
+}
