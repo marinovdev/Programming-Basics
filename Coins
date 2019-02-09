@@ -23,7 +23,7 @@ namespace _04_Coins
                     lv -= 2;
                     totalCoins += 1;
                 }
-                if(lv >= 1)
+                else if(lv >= 1)
                 {
                     lv -= 1;
                     totalCoins += 1;
@@ -36,30 +36,34 @@ namespace _04_Coins
                     coins -= 50;
                     totalCoins += 1;
                 }
-                if (coins >= 20)
+                else if (coins >= 20)
                 {
                     coins -= 20;
                     totalCoins += 1;
                 }
-                if (coins >= 10)
+               else if (coins >= 10)
                 {
                     coins -= 10;
                     totalCoins += 1;
                 }
-                if (coins >= 5)
+                else if (coins >= 5)
                 {
                     coins -= 5;
                     totalCoins += 1;
                 }
-                if (coins >= 2)
+               else if (coins >= 2)
                 {
                     coins -= 2;
                     totalCoins += 1;
                 }
-                if (coins >= 1)
+              else  if (coins >= 1)
                 {
                     coins -= 1;
                     totalCoins += 1;
+                }
+                else
+                {
+                    break;
                 }
             }
             Console.WriteLine(totalCoins);
