@@ -1,0 +1,69 @@
+using System;
+
+namespace _04_Coins
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Производителите на вендинг машини искали да направят машините си да връщат възможно най
+            //    - малко монети ресто. Напишете програма, която приема сума -рестото, което трябва да 
+            //    се върне и изчислява с колко най-малко монети може да стане това.
+
+
+            double vendingMachineChange = double.Parse(Console.ReadLine());// 1.23 ->
+            double lv = Math.Floor(vendingMachineChange);
+            double coins = Math.Round((vendingMachineChange - lv) * 100);
+            int totalCoins = 0;
+
+            while(lv > 0)
+            {
+                if(lv >= 2)
+                {
+                    lv -= 2;
+                    totalCoins += 1;
+                }
+                if(lv >= 1)
+                {
+                    lv -= 1;
+                    totalCoins += 1;
+                }
+            }
+            while (coins > 0)
+            {
+                if(coins >= 50)
+                {
+                    coins -= 50;
+                    totalCoins += 1;
+                }
+                if (coins >= 20)
+                {
+                    coins -= 20;
+                    totalCoins += 1;
+                }
+                if (coins >= 10)
+                {
+                    coins -= 10;
+                    totalCoins += 1;
+                }
+                if (coins >= 5)
+                {
+                    coins -= 5;
+                    totalCoins += 1;
+                }
+                if (coins >= 2)
+                {
+                    coins -= 2;
+                    totalCoins += 1;
+                }
+                if (coins >= 1)
+                {
+                    coins -= 1;
+                    totalCoins += 1;
+                }
+            }
+            Console.WriteLine(totalCoins);
+
+        }
+    }
+}
