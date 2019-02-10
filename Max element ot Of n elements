@@ -1,0 +1,44 @@
+using System;
+
+namespace hom02_half_sum_element
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int nTime = int.Parse(Console.ReadLine());
+            int maxValue = int.MinValue;
+            int totalSumOfValues = 0;
+            int lastNumber = 0;
+
+            for(int index = 1; index <= nTime; index++)
+            {
+                int currentNumber = int.Parse(Console.ReadLine());
+                if(currentNumber > maxValue)
+                {
+                    maxValue = currentNumber;
+                    lastNumber = currentNumber;
+                    totalSumOfValues += currentNumber;
+                }
+                else if (currentNumber <= maxValue)
+                {
+                    totalSumOfValues += currentNumber;
+                }
+            }
+            if(lastNumber == maxValue)
+            {
+                totalSumOfValues -= lastNumber;
+            }
+            if(maxValue == totalSumOfValues)
+            {
+                
+                Console.WriteLine($"Yes\nSum = {maxValue}");
+            }
+            else if (maxValue != totalSumOfValues)
+            {
+                int difference = maxValue - totalSumOfValues;
+                Console.WriteLine($"No\nDiff = {Math.Abs(difference)}");
+            }
+        }
+    }
+}
