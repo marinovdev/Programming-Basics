@@ -1,0 +1,36 @@
+using System;
+
+namespace hom06_left_and_right_sum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numberToInput = int.Parse(Console.ReadLine());
+            int leftSum = 0;
+            int rightSum = 0;
+            for(int index = 1; index <= numberToInput * 2; index+=1)
+            {
+                int currentNumber = int.Parse(Console.ReadLine());
+                if(index <= numberToInput)
+                {
+                    leftSum += currentNumber;
+                }
+                else
+                {
+                    rightSum += currentNumber;
+                }
+            }
+            if(leftSum - rightSum != 0)
+            {
+                int resuilt = leftSum - rightSum;
+                Console.WriteLine($"No, diff = {Math.Abs(resuilt)}");
+            }
+            else if (leftSum - rightSum == 0)
+            {
+                Console.WriteLine($"Yes, sum = {rightSum}");
+            }
+        }
+
+    }
+}
