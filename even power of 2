@@ -1,0 +1,16 @@
+using System;
+
+namespace hom03_even_powers_of_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int currentNumber = int.Parse(Console.ReadLine());
+            for(int begin = 0;begin <= currentNumber; begin +=2)
+            {
+                Console.WriteLine(Math.Pow(2, begin));
+            }
+        }
+    }
+}
