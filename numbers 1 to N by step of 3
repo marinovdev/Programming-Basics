@@ -1,0 +1,17 @@
+using System;
+
+namespace hom02_numbers_1to_n_3by_step
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int currentNumber = int.Parse(Console.ReadLine());
+
+            for(int begin = 1; begin <= currentNumber; begin += 3)
+            {
+                Console.WriteLine(begin);
+            }
+        }
+    }
+}
