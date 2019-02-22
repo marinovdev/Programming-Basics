@@ -1,0 +1,52 @@
+using System;
+
+namespace hom06_traveling
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //            Greece
+            //1000
+            //200
+            //200
+            //300
+            //100
+            //150
+            //240
+            //Spain
+            //1200
+            //300
+            //500
+            //193
+            //423
+            //End
+
+            while (true)
+            {
+                string destination = Console.ReadLine();
+                if(destination == "End")
+                {
+                    break;
+                }
+                double budgetNeeded = double.Parse(Console.ReadLine());
+                double currentAmmount = 0;
+                while (currentAmmount < budgetNeeded)
+                {
+                    double command = double.Parse(Console.ReadLine());
+                    currentAmmount += command;
+                    if (currentAmmount >= budgetNeeded)
+                    {
+                        Console.WriteLine("Going to {0}!", destination);
+                        break;
+                    }
+                }
+                
+
+            }
+
+
+
+        }
+    }
+}
