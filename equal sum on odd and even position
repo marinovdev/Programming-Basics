@@ -1,0 +1,41 @@
+using System;
+
+namespace hom04_Equal_sums_even_odd_position
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int sumOdd = 0;
+            int sumEven = 0;
+            //
+            int firstNumber = int.Parse(Console.ReadLine());
+            int secoundNumber = int.Parse(Console.ReadLine());
+            while (firstNumber <= secoundNumber)
+            {
+                int tempFirstNumber = firstNumber;
+                for (int counter = 6; counter >= 0; counter--)
+                {
+                  
+                    if (counter % 2 == 1)
+                    {
+                        sumOdd += tempFirstNumber % 10;
+                        tempFirstNumber = tempFirstNumber / 10;
+                    }
+                    if(counter % 2 == 0)
+                    {
+                        sumEven += tempFirstNumber % 10;
+                        tempFirstNumber = tempFirstNumber / 10;
+                    }    
+                }
+                if (sumOdd == sumEven)
+                {
+                    Console.Write(firstNumber + " ");
+                }
+                sumEven = 0;
+                sumOdd = 0;
+                firstNumber++;
+            }
+        }
+    }
+}
