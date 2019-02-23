@@ -1,0 +1,31 @@
+using System;
+
+namespace hom03_coding
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int inputNumber = int.Parse(Console.ReadLine());
+            int currentNumber = 0;
+            while (inputNumber > 0)
+            {
+                currentNumber = inputNumber % 10;
+                inputNumber = inputNumber / 10;
+                char currentSymbol = Convert.ToChar(currentNumber + 33);
+                if (currentNumber == 0)
+                {
+                    Console.Write("ZERO");
+                }
+                else
+                {
+                    for (int index = 1; index <= currentNumber; index++)
+                    {
+                        Console.Write(currentSymbol);
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
