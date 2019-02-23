@@ -1,0 +1,34 @@
+using System;
+
+namespace hom01_matrix
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int c = int.Parse(Console.ReadLine());
+            int d = int.Parse(Console.ReadLine());
+
+            for(int firstRowFirstNum = a; firstRowFirstNum <= b; firstRowFirstNum++)
+            {
+                for(int firstRowSecoundNum = a; firstRowSecoundNum <= b; firstRowSecoundNum++)
+                {
+                    for(int secoundRowFirstNum = c; secoundRowFirstNum <= d; secoundRowFirstNum++)
+                    {
+                        for (int secoundRowSecoundNum = c; secoundRowSecoundNum <= d; secoundRowSecoundNum++)
+                        {
+                            if ((firstRowFirstNum + secoundRowSecoundNum) == (firstRowSecoundNum + secoundRowFirstNum) && (firstRowFirstNum != firstRowSecoundNum) && (secoundRowFirstNum != secoundRowSecoundNum))
+                            {
+                                Console.WriteLine($"{firstRowFirstNum}" + $"{firstRowSecoundNum}" );
+                                Console.WriteLine($"{secoundRowFirstNum}" + $"{secoundRowSecoundNum}" );
+                                Console.WriteLine();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
