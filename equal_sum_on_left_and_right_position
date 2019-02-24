@@ -1,0 +1,64 @@
+using System;
+
+namespace hom05_equal_sum_on_left_and_right_position
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstNumber = int.Parse(Console.ReadLine());
+            int secoundNumber = int.Parse(Console.ReadLine());
+            int targetNumber = firstNumber;
+            int firstSecoundNumbDifference = secoundNumber - targetNumber;
+            int currentNumber = 0;
+            int RightSum = 0;
+            int midSum = 0;
+            int LeftSum = 0;
+            for(int counter = 0; counter <= firstSecoundNumbDifference; counter++)
+            {
+                currentNumber = firstNumber;
+                //                10000
+                //10100
+                //    Output:                10001 10010 10100
+                //======================================
+
+                while (currentNumber != 0)
+                {
+                    //right side:
+                    for (int Rcounter = 1; Rcounter <= 2; Rcounter++)
+                    {
+                        RightSum += currentNumber % 10;
+                        currentNumber = currentNumber / 10;
+                    }
+                    midSum += currentNumber % 10;
+                    currentNumber = currentNumber / 10;
+                    for(int Lcounter = 1; Lcounter <= 2; Lcounter++)
+                    {
+                        LeftSum += currentNumber % 10;
+                        currentNumber = currentNumber / 10;
+                    }
+                }
+                //Printing
+                if(RightSum == LeftSum)
+                {
+                    Console.Write($"{firstNumber} ");
+                }
+                else if ((RightSum + midSum) == LeftSum)
+                {
+                    Console.Write($"{firstNumber} ");
+                }
+                else if ((LeftSum + midSum) == RightSum)
+                {
+                    Console.Write($"{firstNumber} ");
+                }
+                //incrementing values back to default
+                firstNumber++;
+               RightSum = 0;
+               midSum = 0;
+               LeftSum = 0;
+
+            }
+
+        }
+    }
+}
