@@ -1,0 +1,35 @@
+using System;
+
+namespace hom07_train_the_trainers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double nPersonsJury = double.Parse(Console.ReadLine());
+            string input = "";
+            string currentPresentationName = "";
+            double grade = 0;
+            double totalGrades = 0;
+            double totalGradesMadeFromJury = 0;
+            double gradeDividedOnJury = 0;
+
+                while ((input = Console.ReadLine()) != "Finish")
+            {
+                currentPresentationName = input;
+                for(double counter = 1; counter <= nPersonsJury; counter++)
+                {
+                    grade += double.Parse(Console.ReadLine());
+
+                }
+                gradeDividedOnJury = grade / nPersonsJury;
+                Console.WriteLine($"{currentPresentationName} - {gradeDividedOnJury:F2}.");
+                totalGrades += grade;
+                totalGradesMadeFromJury += nPersonsJury;
+                grade = 0;
+            }
+            Console.WriteLine($"Student's final assessment is {totalGrades / totalGradesMadeFromJury:F2}.");
+
+        }
+    }
+}
