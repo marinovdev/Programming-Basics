@@ -1,0 +1,57 @@
+using System;
+
+namespace hom06_sum_prime_non_prime
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = "";
+            int sumOfPrimeNumbers = 0;
+            int sumOfNonPrimeNumbers = 0;
+            int n, i, m = 0, flag = 0;
+            while ((input = Console.ReadLine()) != "stop")
+            {
+//                3
+//9
+//0
+//7
+//19
+//4
+//stop
+                int numberInput = int.Parse(input);
+                if(numberInput < 0)
+                {
+                    Console.WriteLine($"Number is negative.");
+                }
+                else if(numberInput > 0)
+                {
+
+                        if (isPrime(numberInput))
+                        {
+                        sumOfPrimeNumbers += numberInput;
+                        }
+                        else
+                        {
+                            sumOfNonPrimeNumbers += numberInput;
+                        }
+
+                }
+            }
+            Console.WriteLine($"Sum of all prime numbers is: {sumOfPrimeNumbers} \nSum of all non prime numbers is: {sumOfNonPrimeNumbers}");
+        }
+        public static bool isPrime(int inputNumber)
+        {
+            if (inputNumber <= 1) return false;
+            else if (inputNumber == 2) return true;
+            else if (inputNumber % 2 == 0) return false;
+            var boundary = (int)Math.Floor(Math.Sqrt(inputNumber));
+
+            for (int i = 3; i <= boundary; i += 2)
+                if (inputNumber % i == 0)
+                    return false;
+
+            return true;
+        }
+    }
+}
