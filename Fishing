@@ -1,0 +1,68 @@
+using System;
+
+namespace hom08_fishing
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double fishCathCount = double.Parse(Console.ReadLine());
+            string fishName = "";
+            double counter = 0;
+            double fishPaid = 0;
+            double fishRevenue = 0;
+            double totalFishPaid = 0;
+            double totalFishRevenue = 0;
+            double fishWeight = 0;
+            double counter2 = 0;
+            for (counter = 1; counter <= fishCathCount; counter++)
+            {
+                fishPaid = 0;
+                fishRevenue = 0;
+//                6
+//Bluefish
+//17.4
+//Garfish
+//14.9
+//Stop // 94.53
+                fishName = Console.ReadLine();
+                if (fishName == "Stop") break;
+                fishWeight = double.Parse(Console.ReadLine());
+                if(counter2 < 2)
+                {
+                    counter2++;
+                    foreach (char ch in fishName)
+                    {
+                        
+                        fishPaid += ch;
+                    }
+                    totalFishPaid += fishPaid / fishWeight; //26 / 49.55 / 199 / 224
+                }
+                else if(counter2 == 2)
+                {
+                    counter2 -= 2;
+                    foreach (char ch in fishName)
+                    {
+                        fishRevenue += ch;
+                    }
+                    totalFishRevenue += fishRevenue / fishWeight; // 37
+                }
+
+            }
+            if(fishCathCount == counter -1)
+            {
+                Console.WriteLine($"Lyubo fulfilled the quota!");
+            }
+            if(totalFishPaid > totalFishRevenue)
+            {
+                double difference = ((double)totalFishPaid - totalFishRevenue);
+                Console.WriteLine($"Lyubo lost {difference:F2} leva today.");
+            }
+            else if(totalFishPaid <= totalFishRevenue)
+            {
+               double difference = ((double)totalFishRevenue - totalFishPaid);
+                Console.WriteLine($"Lyubo's profit from {counter - 1} fishes is {difference:F2} leva.");
+            }
+        }
+    }
+}
